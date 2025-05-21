@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root {
+    --primary-color: #ffffff;
+    --background-color: #000000;
+    --accent-color: #4a90e2;
+    --text-color: #ffffff;
+    --input-background: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.logo {
+    max-width: 320px;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+h1 {
+    font-size: 2.7rem;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 16px rgba(74,144,226,0.10);
+}
+
+.cta-button {
+    background: linear-gradient(90deg, #4a90e2 0%, #50e3c2 100%);
+    color: #fff;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 40px;
+    box-shadow: 0 8px 32px 0 rgba(74,144,226,0.2);
+    cursor: pointer;
+    font-weight: 400;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 40px 0 rgba(74,144,226,0.3);
+    background: linear-gradient(90deg, #50e3c2 0%, #4a90e2 100%);
+}
+
+.form-section {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+form {
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 2.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4a90e2;
+    pointer-events: none;
+    z-index: 2;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1.2rem 1.2rem 1.2rem 3.2rem;
+    background: var(--input-background);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 300;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--accent-color);
+}
+
+label {
+    position: absolute;
+    left: 3.2rem;
+    top: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-weight: 300;
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
+    pointer-events: none;
+    background: transparent;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+    top: -0.7rem;
+    left: 2.8rem;
+    font-size: 0.85rem;
+    background: var(--background-color);
+    padding: 0 0.4rem;
+    color: #50e3c2;
+}
+
+.privacy {
+    margin: 2rem 0 1.2rem 0;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1.1rem;
+    background: linear-gradient(90deg, #4a90e2 0%, #50e3c2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.15rem;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 4px 16px 0 rgba(74,144,226,0.15);
+    transition: background 0.3s, box-shadow 0.2s;
+}
+
+.submit-button:hover {
+    background: linear-gradient(90deg, #50e3c2 0%, #4a90e2 100%);
+    box-shadow: 0 8px 32px 0 rgba(74,144,226,0.25);
+}
+
+.form-info-text {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 2.2rem;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 900px) {
+    .form-section {
+        max-width: 95vw;
+        padding: 2rem 0.5rem;
+    }
+    h1 {
+        font-size: 2.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0.5rem;
+    }
+    .form-section {
+        padding: 1.2rem 0.2rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .cta-button {
+        font-size: 1rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+.slogan-img {
+    display: block;
+    margin: 0.5rem auto 2.5rem auto;
+    max-width: 420px;
+    width: 90%;
+    height: auto;
+}
+
+.slogan-quote {
+    font-family: 'Permanent Marker', 'Comic Sans MS', cursive, sans-serif;
+    font-size: 3.2rem;
+    color: #fff;
+    text-align: center;
+    margin: 0.5rem auto 1.2rem auto;
+    max-width: 900px;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    text-shadow: 2px 2px 0 #222, 0 2px 16px rgba(74,144,226,0.10);
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+@media (max-width: 900px) {
+    .slogan-quote {
+        font-size: 2.1rem;
+        max-width: 95vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .slogan-quote {
+        font-size: 1.2rem;
+        max-width: 95vw;
+    }
+} 
