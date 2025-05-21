@@ -34,25 +34,42 @@
                         <span class="icon"> <!-- Mail Icon -->
                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
                         </span>
-                        <input type="email" id="email" name="email" required placeholder=" ">
-                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" placeholder=" ">
+                        <label for="email">E-Mail (optional)</label>
                     </div>
                     <div class="form-group">
                         <span class="icon"> <!-- Phone Icon -->
                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.72 19.72 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13 1.05.37 2.07.72 3.06a2 2 0 0 1-.45 2.11l-.27.27a16 16 0 0 0 6.29 6.29l.27-.27a2 2 0 0 1 2.11-.45c.99.35 2.01.59 3.06.72A2 2 0 0 1 22 16.92z"/></svg>
                         </span>
                         <input type="tel" id="contact" name="contact" placeholder=" ">
-                        <label for="contact">Weitere Kontaktdaten</label>
+                        <label for="contact">Weitere Kontaktdaten (optional)</label>
+                    </div>
+                    <div class="form-group">
+                        <p>Ich interessiere mich für (optional):</p>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="interest" value="allgemeine_infos"> Allgemeine Infos zum Projekt
+                            </label>
+                            <label>
+                                <input type="checkbox" name="interest" value="direktkredite"> Direktkredite und Unterstützung
+                            </label>
+                            <label>
+                                <input type="checkbox" name="interest" value="solawi"> SolaWi
+                            </label>
+                            <label>
+                                <input type="checkbox" name="interest" value="kontakt_bleiben"> Im Kontakt bleiben
+                            </label>
+                        </div>
                     </div>
                     <div class="form-group">
                         <span class="icon"> <!-- Note Icon -->
                             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h8M8 16h2"/></svg>
                         </span>
                         <textarea id="notes" name="notes" rows="3" placeholder=" "></textarea>
-                        <label for="notes">Notizen</label>
+                        <label for="notes">Notizen (optional)</label>
                     </div>
                     <div class="privacy">
-                        <p>Mit dem Absenden stimmen Sie zu, dass wir Ihre Daten zur Kontaktaufnahme verwenden dürfen.</p>
+                        <p>Mit dem Absenden stimmen Sie zu, dass wir Deine Daten zur Kontaktaufnahme verwenden dürfen.</p>
                     </div>
                     <button type="submit" class="submit-button">Absenden</button>
                 </form>

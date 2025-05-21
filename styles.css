@@ -96,9 +96,10 @@ form {
     margin-bottom: 2.2rem;
     display: flex;
     align-items: center;
+    gap: 1.2rem;
 }
 
-.icon {
+.form-group > .icon {
     position: absolute;
     left: 1.2rem;
     top: 50%;
@@ -108,7 +109,8 @@ form {
     z-index: 2;
 }
 
-input, textarea {
+.form-group > input,
+.form-group > textarea {
     width: 100%;
     padding: 1.2rem 1.2rem 1.2rem 3.2rem;
     background: var(--input-background);
@@ -121,11 +123,7 @@ input, textarea {
     outline: none;
 }
 
-input:focus, textarea:focus {
-    border-color: var(--accent-color);
-}
-
-label {
+.form-group > label {
     position: absolute;
     left: 3.2rem;
     top: 1.2rem;
@@ -137,16 +135,78 @@ label {
     background: transparent;
 }
 
-input:focus + label,
-input:not(:placeholder-shown) + label,
-textarea:focus + label,
-textarea:not(:placeholder-shown) + label {
+.form-group > input:focus + label,
+.form-group > input:not(:placeholder-shown) + label,
+.form-group > textarea:focus + label,
+.form-group > textarea:not(:placeholder-shown) + label {
     top: -0.7rem;
     left: 2.8rem;
     font-size: 0.85rem;
     background: var(--background-color);
     padding: 0 0.4rem;
     color: #50e3c2;
+}
+
+.form-group .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.form-group .checkbox-group label {
+    position: static;
+    transform: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: transparent;
+    padding: 0;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-group .checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 0;
+    vertical-align: top;
+}
+
+.form-group .checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.form-group .checkbox-group input[type="checkbox"]:checked::after {
+    content: '\2713';
+    color: var(--background-color);
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-group > p {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
 }
 
 .privacy {
@@ -194,6 +254,38 @@ textarea:not(:placeholder-shown) + label {
     }
     h1 {
         font-size: 2.1rem;
+    }
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group .icon {
+        position: static;
+        transform: none;
+        margin-right: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group label {
+        position: static;
+        transform: none;
+        padding: 0;
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    input:focus + label,
+    input:not(:placeholder-shown) + label,
+    textarea:focus + label,
+    textarea:not(:placeholder-shown) + label {
+        top: auto;
+        left: auto;
+        font-size: 0.85rem;
+        background: transparent;
+        padding: 0;
+        color: #50e3c2;
     }
 }
 
@@ -248,4 +340,63 @@ textarea:not(:placeholder-shown) + label {
         font-size: 1.2rem;
         max-width: 95vw;
     }
-} 
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-group label {
+    position: static;
+    transform: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: transparent;
+    padding: 0;
+    margin-left: 1.2rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: auto;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+/* Style the custom checkbox appearance if needed - example */
+/*
+.checkbox-group input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    top: 4px;
+    vertical-align: top;
+    margin-right: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+    content: '\2713';
+    color: var(--background-color);
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+*/ 

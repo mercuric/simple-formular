@@ -6,6 +6,7 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
         email: document.getElementById('email').value,
         contact: document.getElementById('contact').value,
         notes: document.getElementById('notes').value,
+        interest: Array.from(document.querySelectorAll('input[name="interest"]:checked')).map(cb => cb.value).join(', '),
         timestamp: new Date().toISOString()
     };
 
@@ -19,13 +20,13 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
         });
 
         if (response.ok) {
-            alert('Vielen Dank für Ihre Anmeldung!');
+            alert('Vielen Dank für Dein Eintrag!');
             e.target.reset();
         } else {
-            alert('Es gab einen Fehler. Bitte versuchen Sie es später erneut.');
+            alert('Es gab einen Fehler. Bitte versuche es später erneut.');
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Es gab einen Fehler. Bitte versuchen Sie es später erneut.');
+        alert('Es gab einen Fehler. Bitte versuche es später erneut.');
     }
 }); 
