@@ -6,7 +6,7 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
         email: document.getElementById('email').value,
         contact: document.getElementById('contact').value,
         notes: document.getElementById('notes').value,
-        interest: Array.from(document.querySelectorAll('input[name="interest"]:checked')).map(cb => cb.value).join(', '),
+        interest: Array.from(document.querySelectorAll('input[name="interest"]:checked')).map(cb => cb.value),
         timestamp: new Date().toISOString()
     };
 
