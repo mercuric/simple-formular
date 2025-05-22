@@ -350,4 +350,32 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-*/ 
+*/
+
+/* Stile für temporäre Nachrichten */
+#message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    padding: 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transform: translateY(-100%); /* Anfangs außerhalb des Viewports */
+    transition: transform 0.5s ease-in-out;
+}
+
+#message-container.show {
+    transform: translateY(0); /* Einblenden */
+}
+
+#message-container.success {
+    background-color: #28a745; /* Grüne Farbe für Erfolg */
+}
+
+#message-container.error {
+    background-color: #dc3545; /* Rote Farbe für Fehler */
+} 

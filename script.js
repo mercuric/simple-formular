@@ -19,14 +19,32 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
             body: JSON.stringify(formData)
         });
 
+        const messageContainer = document.getElementById('message-container');
+
         if (response.ok) {
-            alert('Vielen Dank für Dein Eintrag!');
+            messageContainer.textContent = 'Vielen Dank für Dein Eintrag!';
+            messageContainer.className = 'show success';
             e.target.reset();
         } else {
-            alert('Es gab einen Fehler. Bitte versuche es später erneut.');
+            messageContainer.textContent = 'Es gab einen Fehler. Bitte versuche es später erneut.';
+            messageContainer.className = 'show error';
         }
+
+        setTimeout(() => {
+            messageContainer.className = '';
+            if (response.ok) {
+                e.target.reset();
+            }
+        }, 3000);
+
     } catch (error) {
         console.error('Error:', error);
-        alert('Es gab einen Fehler. Bitte versuche es später erneut.');
+        const messageContainer = document.getElementById('message-container');
+        messageContainer.textContent = 'Es gab einen Fehler. Bitte versuche es später erneut.';
+        messageContainer.className = 'show error';
+        
+        setTimeout(() => {
+            messageContainer.className = '';
+        }, 3000);
     }
 }); 
